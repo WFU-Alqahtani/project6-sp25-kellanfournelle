@@ -28,4 +28,27 @@ public class Card {
         System.out.print(suit + ": " + rank);
     }
 
+    //override method to compare cards
+    public int compareTo(Card c){
+       //if both are null
+        if (this.rank == ranks.NULL && c.rank == ranks.NULL){
+            return 0;
+        }
+
+        //if this is null
+        else if(this.rank == ranks.NULL){
+            return -1;
+        }
+
+        //if that is null
+        else if(c.rank == ranks.NULL){
+            return 1;
+        }
+
+        else {
+            return this.rank.ordinal() - c.rank.ordinal();
+        }
+
+    }
+
 }
